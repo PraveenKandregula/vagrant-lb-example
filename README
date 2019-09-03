@@ -1,0 +1,60 @@
+OS: Red Hat Enterprise Linux Server release 7.7 (Maipo)
+
+###############################################################################################
+Vagrant uses VirualBox as default provider. So VirtualBox must be installed prior to Vagrant. 
+Add VirtualBox repository to yum repo manager:
+cd /etc/yum.repos.d/
+wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
+yum update
+
+Install pre-requisites:
+yum install -y binutils \
+               qt \
+               gcc \
+               make \ 
+               patch \
+               libgomp \ 
+               glibc-headers \
+               glibc-devel \
+               kernel-headers \
+               kernel-devel \
+               dkms
+
+Install and run VirtualBox:
+yum install VirtualBox-6.0 -y
+yum install kernel-devel-`uanem -r` -y
+/usr/lib/virtualbox/vboxdrv.sh setup
+
+Add required users to VirtualBox group:
+usermod -a -G vboxusers kprkumar528
+usermod -a -G vboxusers root
+###############################################################################################
+Vagrant requires below fuse packages. Ensure to install them if in case vagrant is being installed on RHEL OS. 
+yum install -y fuse \
+               libfuse.so.2 \
+               libfuse \
+               fuse.x86_64 \
+               fuse-devel.i686 \
+	       fuse-devel.x86_64 \
+	       fuse-libs.i686 \
+	       fuse-libs.x86_64 \
+	       fuse-sshfs.x86_64
+
+Download latest vagrant package
+wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_linux_amd64.zip
+
+Installation process:
+mkdir /opt/vagrant
+cd /opt/vagrant
+cp ~/vagrant_2.2.5_linux_amd64.zip .
+unzip vagrant_2.2.5_linux_amd64.zip
+chmod -R 755 /opt/vagrant
+
+Add vagrant to PATH:
+cd /usr/bin
+ln -s /opt/vagrant/vagrant vagrant
+
+Validation:
+Logout and login.
+vagrant help
+###############################################################################################

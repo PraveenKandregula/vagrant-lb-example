@@ -12,7 +12,7 @@ echo ""
 echo "<html><head><title>Bash as CGI"
 echo "</title></head><body>"
 
-echo "<h1>This response is returned by $(ifconfig | grep inet | grep 172 | awk '{print $2}')</h1>"
+echo "<h1>Hello world. This response is returned by $(ifconfig | grep inet | grep 172 | awk '{print $2}')</h1>"
 echo ""
 
 echo "</body></html>"

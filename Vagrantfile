@@ -4,28 +4,28 @@ VERSION = "2"
 VM_BOX_OS = "centos/7"
 
 #Provisioning details in hash map format
-BOX_DETAILS = { 
+BOX_DETAILS = {
+               "web1" => {
+                          "ip" => "172.28.33.11",
+                          "provisioner" => "web_setup.sh",
+                          "port_forwarder" => {
+                                               "8081" => "8080"
+                                              }
+                         },
+               "web2" => {
+                          "ip" => "172.28.33.12",
+                          "provisioner" => "web_setup.sh",
+                          "port_forwarder" => {
+                                               "8082" => "8080"
+                                              }
+                         },
                "lb_haproxy" => {
 	                        "ip" => "172.28.33.10",
 				"provisioner" => "haproxy_setup.sh",
 				"port_forwarder" => { 
 				                     "80" => "80"
 						    }
-	                       },
-               "web1" => {
-	                  "ip" => "172.28.33.11",
-			  "provisioner" => "web_setup.sh",
-			  "port_forwarder" => {
-                                               "8081" => "8080"
-                                              }
-	                 },
-               "web2" => {
-	                  "ip" => "172.28.33.12",
-			  "provisioner" => "web_setup.sh",
-			  "port_forwarder" => {
-                                               "8082" => "8080"
-                                              }
-	                 }
+	                       }
               }
 
 Vagrant.configure(VERSION) do |config|

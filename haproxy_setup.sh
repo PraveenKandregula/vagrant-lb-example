@@ -1,14 +1,12 @@
 #!/bin/bash
 
-#Install haproxy
-yum install haproxy -y
+#Install haproxy,net-tools
+yum install haproxy net-tools -y
 
-#Enable haprovy to start at bootup
+#Enable haproxy to start at bootup
 systemctl enable haproxy
 
-#Start haproxy
-systemctl start haproxy
-
+#Config
 cat > /etc/haproxy/haproxy.cfg <<EOD
 global
     daemon
@@ -36,6 +34,9 @@ listen admin
     bind *:8080
     stats enable
 EOD
+
+#Start haproxy
+systemctl start haproxy
 
 #haproxy status
 systemctl status haproxy

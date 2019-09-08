@@ -3,10 +3,10 @@ Install vagrant and Virtualbox
 
 System config:
 This has been setup on windows 10 and gitbash has been used as terminal to run vagrant commands
-Centos/7 box has been used during this excercise. Other boxes can be selected too from vast variety boxes available at https://app.vagrantup.com/boxes/search
+Centos/7 box has been used during this exercise. Other boxes can be selected too from vast variety boxes available at https://app.vagrantup.com/boxes/search
 
 Process to setup the environment:
-This works fine for the first time. But ensure to pass --provision from subsequent runs especially while restoring any halted machines
+This works fine for the first time. But ensure to pass --provision from subsequent runs especially while restoring any halted machines. Ideal execution will have the output depicted in sample-output.out
 vagrant up
 vagrant up --provision
 
@@ -17,7 +17,7 @@ vagrant destroy -f -- to destroy entire setup
 
 The above command will setup below vagrant machines
 1. lb_haproxy 
-   -- Works as LB during this excercise. haproxy has been used for loadbalancing and routing. 
+   -- Works as LB during this exercise. haproxy has been used for loadbalancing and routing. 
    -- Starts on 172.28.33.10
 2. web1 
    -- Works as web server which hosts static content to return when hit from browser.
@@ -27,14 +27,16 @@ The above command will setup below vagrant machines
    -- 172.28.33.12
 
 Tests to be conducted:
-Hit below url in browser. It should return responses from all active web servers that are setup.
+Hit below url in browser. It should returin responses from all active web servers that are setup in round-robin fashion. 
 http://172.28.33.10/cgi-bin/index.cgi
 
-Halt one of the web machines and hit the above lb url. This time it should return the response from other active web server. Repeat it with all web servers in this setup.
+Halt one of the web machines and hit the above lb url. This time it should skip the failed machine and return the response from other active web server. Repeat it with all web servers in this setup.
 
 Further improvements:
 1. The setup will work as is even though there is no definition for port forwarding. So it can be removed.
 2. The provisioning scripts have been prepared to setup lb and web servers on centos. This can be improvised to suit other OS. 
-3. This can be improvised further to accept no.of web servers as input ad setup those manay webservers. 
+3. This can be improvised further to accept no.of web servers as input and setup those manay webservers. 
 4. As of now, ip addresses of web servers have been hot-coded in lb provisioning. This can be improvised futher to pass args to provisioning script. 
-5. Came across many challenges to read the values from hashmaps by key. Hence implemented nested if-else block. This can be simplified by reading values from hashmap based on key names. 
+5. Came across many challenges to read the values from hashmaps by key. Hence implemented nested if-else block. This can be simplified by reading values from hashmap based on key names.
+6. Allocation of dynamic ips can be implemented
+7. Command used to fetch ip in web_setup.sh can be improvised. 

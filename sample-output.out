@@ -1,0 +1,420 @@
+Bringing machine 'web1' up with 'virtualbox' provider...
+Bringing machine 'web2' up with 'virtualbox' provider...
+Bringing machine 'lb_haproxy' up with 'virtualbox' provider...
+==> web1: Importing base box 'centos/7'...
+==> web1: Matching MAC address for NAT networking...
+==> web1: Checking if box 'centos/7' version '1905.1' is up to date...
+==> web1: Setting the name of the VM: vagrant-lb-example_web1_1567965856245_5223
+==> web1: Clearing any previously set network interfaces...
+==> web1: Preparing network interfaces based on configuration...
+    web1: Adapter 1: nat
+    web1: Adapter 2: hostonly
+==> web1: Forwarding ports...
+    web1: 8080 (guest) => 8081 (host) (adapter 1)
+    web1: 22 (guest) => 2222 (host) (adapter 1)
+==> web1: Booting VM...
+==> web1: Waiting for machine to boot. This may take a few minutes...
+    web1: SSH address: 127.0.0.1:2222
+    web1: SSH username: vagrant
+    web1: SSH auth method: private key
+    web1:
+    web1: Vagrant insecure key detected. Vagrant will automatically replace
+    web1: this with a newly generated keypair for better security.
+    web1:
+    web1: Inserting generated public key within guest...
+    web1: Removing insecure key from the guest if it's present...
+    web1: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> web1: Machine booted and ready!
+==> web1: Checking for guest additions in VM...
+    web1: No guest additions were detected on the base box for this VM! Guest
+    web1: additions are required for forwarded ports, shared folders, host only
+    web1: networking, and more. If SSH fails on this machine, please install
+    web1: the guest additions and repackage the box to continue.
+    web1:
+    web1: This is not an error message; everything may continue to work properly,
+    web1: in which case you may ignore this message.
+==> web1: Configuring and enabling network interfaces...
+==> web1: Rsyncing folder: /cygdrive/c/Users/Praveen/Desktop/GIT/vagrant-lb-example/ => /vagrant
+==> web1: Running provisioner: shell...
+    web1: Running: C:/Users/Praveen/AppData/Local/Temp/vagrant-shell20190908-20344-1cx3k7t.sh
+    web1: Loaded plugins: fastestmirror
+    web1: Determining fastest mirrors
+    web1:  * base: centos.excellmedia.net
+    web1:  * extras: centos.excellmedia.net
+    web1:  * updates: centos.excellmedia.net
+    web1: Resolving Dependencies
+    web1: --> Running transaction check
+    web1: ---> Package httpd.x86_64 0:2.4.6-89.el7.centos.1 will be installed
+    web1: --> Processing Dependency: httpd-tools = 2.4.6-89.el7.centos.1 for package: httpd-2.4.6-89.el7.centos.1.x86_64
+    web1: --> Processing Dependency: system-logos >= 7.92.1-1 for package: httpd-2.4.6-89.el7.centos.1.x86_64
+    web1: --> Processing Dependency: /etc/mime.types for package: httpd-2.4.6-89.el7.centos.1.x86_64
+    web1: --> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.6-89.el7.centos.1.x86_64
+    web1: --> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.6-89.el7.centos.1.x86_64
+    web1: ---> Package net-tools.x86_64 0:2.0-0.24.20131004git.el7 will be installed
+    web1: --> Running transaction check
+    web1: ---> Package apr.x86_64 0:1.4.8-3.el7_4.1 will be installed
+    web1: ---> Package apr-util.x86_64 0:1.5.2-6.el7 will be installed
+    web1: ---> Package centos-logos.noarch 0:70.0.6-3.el7.centos will be installed
+    web1: ---> Package httpd-tools.x86_64 0:2.4.6-89.el7.centos.1 will be installed
+    web1: ---> Package mailcap.noarch 0:2.1.41-2.el7 will be installed
+    web1: --> Finished Dependency Resolution
+    web1:
+    web1: Dependencies Resolved
+    web1:
+    web1: ================================================================================
+    web1:  Package           Arch        Version                       Repository    Size
+    web1: ================================================================================
+    web1: Installing:
+    web1:  httpd             x86_64      2.4.6-89.el7.centos.1         updates      2.7 M
+    web1:  net-tools         x86_64      2.0-0.24.20131004git.el7      base         306 k
+    web1: Installing for dependencies:
+    web1:  apr               x86_64      1.4.8-3.el7_4.1               base         103 k
+    web1:  apr-util          x86_64      1.5.2-6.el7                   base          92 k
+    web1:  centos-logos      noarch      70.0.6-3.el7.centos           base          21 M
+    web1:  httpd-tools       x86_64      2.4.6-89.el7.centos.1         updates       91 k
+    web1:  mailcap           noarch      2.1.41-2.el7                  base          31 k
+    web1:
+    web1: Transaction Summary
+    web1: ================================================================================
+    web1: Install  2 Packages (+5 Dependent packages)
+    web1:
+    web1: Total download size: 25 M
+    web1: Installed size: 32 M
+    web1: Downloading packages:
+    web1: Public key for apr-util-1.5.2-6.el7.x86_64.rpm is not installed
+    web1: warning: /var/cache/yum/x86_64/7/base/packages/apr-util-1.5.2-6.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+    web1: Public key for httpd-tools-2.4.6-89.el7.centos.1.x86_64.rpm is not installed
+    web1: --------------------------------------------------------------------------------
+    web1: Total                                              1.2 MB/s |  25 MB  00:20
+    web1: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    web1: Importing GPG key 0xF4A80EB5:
+    web1:  Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>"
+    web1:  Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+    web1:  Package    : centos-release-7-6.1810.2.el7.centos.x86_64 (@anaconda)
+    web1:  From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    web1: Running transaction check
+    web1: Running transaction test
+    web1: Transaction test succeeded
+    web1: Running transaction
+    web1:   Installing : apr-1.4.8-3.el7_4.1.x86_64                                   1/7
+    web1:
+    web1:   Installing : apr-util-1.5.2-6.el7.x86_64                                  2/7
+    web1:
+    web1:   Installing : httpd-tools-2.4.6-89.el7.centos.1.x86_64                     3/7
+    web1:
+    web1:   Installing : centos-logos-70.0.6-3.el7.centos.noarch                      4/7
+    web1:
+    web1:   Installing : mailcap-2.1.41-2.el7.noarch                                  5/7
+    web1:
+    web1:   Installing : httpd-2.4.6-89.el7.centos.1.x86_64                           6/7
+    web1:
+    web1:   Installing : net-tools-2.0-0.24.20131004git.el7.x86_64                    7/7
+    web1:
+    web1:   Verifying  : httpd-2.4.6-89.el7.centos.1.x86_64                           1/7
+    web1:
+    web1:   Verifying  : httpd-tools-2.4.6-89.el7.centos.1.x86_64                     2/7
+    web1:
+    web1:   Verifying  : net-tools-2.0-0.24.20131004git.el7.x86_64                    3/7
+    web1:
+    web1:   Verifying  : mailcap-2.1.41-2.el7.noarch                                  4/7
+    web1:
+    web1:   Verifying  : apr-util-1.5.2-6.el7.x86_64                                  5/7
+    web1:
+    web1:   Verifying  : apr-1.4.8-3.el7_4.1.x86_64                                   6/7
+    web1:
+    web1:   Verifying  : centos-logos-70.0.6-3.el7.centos.noarch                      7/7
+    web1:
+    web1:
+    web1: Installed:
+    web1:   httpd.x86_64 0:2.4.6-89.el7.centos.1
+    web1:   net-tools.x86_64 0:2.0-0.24.20131004git.el7
+    web1:
+    web1: Dependency Installed:
+    web1:   apr.x86_64 0:1.4.8-3.el7_4.1
+    web1:   apr-util.x86_64 0:1.5.2-6.el7
+    web1:   centos-logos.noarch 0:70.0.6-3.el7.centos
+    web1:   httpd-tools.x86_64 0:2.4.6-89.el7.centos.1
+    web1:   mailcap.noarch 0:2.1.41-2.el7
+    web1:
+    web1: Complete!
+    web1: ● httpd.service - The Apache HTTP Server
+    web1:    Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; vendor preset: disabled)
+    web1:    Active: active (running) since Sun 2019-09-08 18:05:29 UTC; 11ms ago
+    web1:      Docs: man:httpd(8)
+    web1:            man:apachectl(8)
+    web1:  Main PID: 5103 (httpd)
+    web1:    Status: "Processing requests..."
+    web1:    CGroup: /system.slice/httpd.service
+    web1:            ├─5103 /usr/sbin/httpd -DFOREGROUND
+    web1:            ├─5104 /usr/sbin/httpd -DFOREGROUND
+    web1:            ├─5105 /usr/sbin/httpd -DFOREGROUND
+    web1:            ├─5106 /usr/sbin/httpd -DFOREGROUND
+    web1:            ├─5107 /usr/sbin/httpd -DFOREGROUND
+    web1:            └─5108 /usr/sbin/httpd -DFOREGROUND
+    web1:
+    web1: Sep 08 18:05:29 localhost.localdomain systemd[1]: Starting The Apache HTTP Server...
+    web1: Sep 08 18:05:29 localhost.localdomain httpd[5103]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using localhost.localdomain. Set the 'ServerName' directive globally to suppress this message
+    web1: Sep 08 18:05:29 localhost.localdomain systemd[1]: Started The Apache HTTP Server.
+==> web2: Importing base box 'centos/7'...
+==> web2: Matching MAC address for NAT networking...
+==> web2: Checking if box 'centos/7' version '1905.1' is up to date...
+==> web2: Setting the name of the VM: vagrant-lb-example_web2_1567965948065_63826
+==> web2: Fixed port collision for 22 => 2222. Now on port 2200.
+==> web2: Clearing any previously set network interfaces...
+==> web2: Preparing network interfaces based on configuration...
+    web2: Adapter 1: nat
+    web2: Adapter 2: hostonly
+==> web2: Forwarding ports...
+    web2: 8080 (guest) => 8082 (host) (adapter 1)
+    web2: 22 (guest) => 2200 (host) (adapter 1)
+==> web2: Booting VM...
+==> web2: Waiting for machine to boot. This may take a few minutes...
+    web2: SSH address: 127.0.0.1:2200
+    web2: SSH username: vagrant
+    web2: SSH auth method: private key
+    web2:
+    web2: Vagrant insecure key detected. Vagrant will automatically replace
+    web2: this with a newly generated keypair for better security.
+    web2:
+    web2: Inserting generated public key within guest...
+    web2: Removing insecure key from the guest if it's present...
+    web2: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> web2: Machine booted and ready!
+==> web2: Checking for guest additions in VM...
+    web2: No guest additions were detected on the base box for this VM! Guest
+    web2: additions are required for forwarded ports, shared folders, host only
+    web2: networking, and more. If SSH fails on this machine, please install
+    web2: the guest additions and repackage the box to continue.
+    web2:
+    web2: This is not an error message; everything may continue to work properly,
+    web2: in which case you may ignore this message.
+==> web2: Configuring and enabling network interfaces...
+==> web2: Rsyncing folder: /cygdrive/c/Users/Praveen/Desktop/GIT/vagrant-lb-example/ => /vagrant
+==> web2: Running provisioner: shell...
+    web2: Running: C:/Users/Praveen/AppData/Local/Temp/vagrant-shell20190908-20344-ty34py.sh
+    web2: Loaded plugins: fastestmirror
+    web2: Determining fastest mirrors
+    web2:  * base: centos.excellmedia.net
+    web2:  * extras: centos.excellmedia.net
+    web2:  * updates: centos.excellmedia.net
+    web2: Resolving Dependencies
+    web2: --> Running transaction check
+    web2: ---> Package httpd.x86_64 0:2.4.6-89.el7.centos.1 will be installed
+    web2: --> Processing Dependency: httpd-tools = 2.4.6-89.el7.centos.1 for package: httpd-2.4.6-89.el7.centos.1.x86_64
+    web2: --> Processing Dependency: system-logos >= 7.92.1-1 for package: httpd-2.4.6-89.el7.centos.1.x86_64
+    web2: --> Processing Dependency: /etc/mime.types for package: httpd-2.4.6-89.el7.centos.1.x86_64
+    web2: --> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.6-89.el7.centos.1.x86_64
+    web2: --> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.6-89.el7.centos.1.x86_64
+    web2: ---> Package net-tools.x86_64 0:2.0-0.24.20131004git.el7 will be installed
+    web2: --> Running transaction check
+    web2: ---> Package apr.x86_64 0:1.4.8-3.el7_4.1 will be installed
+    web2: ---> Package apr-util.x86_64 0:1.5.2-6.el7 will be installed
+    web2: ---> Package centos-logos.noarch 0:70.0.6-3.el7.centos will be installed
+    web2: ---> Package httpd-tools.x86_64 0:2.4.6-89.el7.centos.1 will be installed
+    web2: ---> Package mailcap.noarch 0:2.1.41-2.el7 will be installed
+    web2: --> Finished Dependency Resolution
+    web2:
+    web2: Dependencies Resolved
+    web2:
+    web2: ================================================================================
+    web2:  Package           Arch        Version                       Repository    Size
+    web2: ================================================================================
+    web2: Installing:
+    web2:  httpd             x86_64      2.4.6-89.el7.centos.1         updates      2.7 M
+    web2:  net-tools         x86_64      2.0-0.24.20131004git.el7      base         306 k
+    web2: Installing for dependencies:
+    web2:  apr               x86_64      1.4.8-3.el7_4.1               base         103 k
+    web2:  apr-util          x86_64      1.5.2-6.el7                   base          92 k
+    web2:  centos-logos      noarch      70.0.6-3.el7.centos           base          21 M
+    web2:  httpd-tools       x86_64      2.4.6-89.el7.centos.1         updates       91 k
+    web2:  mailcap           noarch      2.1.41-2.el7                  base          31 k
+    web2:
+    web2: Transaction Summary
+    web2: ================================================================================
+    web2: Install  2 Packages (+5 Dependent packages)
+    web2:
+    web2: Total download size: 25 M
+    web2: Installed size: 32 M
+    web2: Downloading packages:
+    web2: Public key for apr-util-1.5.2-6.el7.x86_64.rpm is not installed
+    web2: warning: /var/cache/yum/x86_64/7/base/packages/apr-util-1.5.2-6.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+    web2: Public key for httpd-tools-2.4.6-89.el7.centos.1.x86_64.rpm is not installed
+    web2: --------------------------------------------------------------------------------
+    web2: Total                                              3.6 MB/s |  25 MB  00:06
+    web2: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    web2: Importing GPG key 0xF4A80EB5:
+    web2:  Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>"
+    web2:  Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+    web2:  Package    : centos-release-7-6.1810.2.el7.centos.x86_64 (@anaconda)
+    web2:  From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    web2: Running transaction check
+    web2: Running transaction test
+    web2: Transaction test succeeded
+    web2: Running transaction
+    web2:   Installing : apr-1.4.8-3.el7_4.1.x86_64                                   1/7
+    web2:
+    web2:   Installing : apr-util-1.5.2-6.el7.x86_64                                  2/7
+    web2:
+    web2:   Installing : httpd-tools-2.4.6-89.el7.centos.1.x86_64                     3/7
+    web2:
+    web2:   Installing : centos-logos-70.0.6-3.el7.centos.noarch                      4/7
+    web2:
+    web2:   Installing : mailcap-2.1.41-2.el7.noarch                                  5/7
+    web2:
+    web2:   Installing : httpd-2.4.6-89.el7.centos.1.x86_64                           6/7
+    web2:
+    web2:   Installing : net-tools-2.0-0.24.20131004git.el7.x86_64                    7/7
+    web2:
+    web2:   Verifying  : httpd-2.4.6-89.el7.centos.1.x86_64                           1/7
+    web2:
+    web2:   Verifying  : httpd-tools-2.4.6-89.el7.centos.1.x86_64                     2/7
+    web2:
+    web2:   Verifying  : net-tools-2.0-0.24.20131004git.el7.x86_64                    3/7
+    web2:
+    web2:   Verifying  : mailcap-2.1.41-2.el7.noarch                                  4/7
+    web2:
+    web2:   Verifying  : apr-util-1.5.2-6.el7.x86_64                                  5/7
+    web2:
+    web2:   Verifying  : apr-1.4.8-3.el7_4.1.x86_64                                   6/7
+    web2:
+    web2:   Verifying  : centos-logos-70.0.6-3.el7.centos.noarch                      7/7
+    web2:
+    web2:
+    web2: Installed:
+    web2:   httpd.x86_64 0:2.4.6-89.el7.centos.1
+    web2:   net-tools.x86_64 0:2.0-0.24.20131004git.el7
+    web2:
+    web2: Dependency Installed:
+    web2:   apr.x86_64 0:1.4.8-3.el7_4.1
+    web2:   apr-util.x86_64 0:1.5.2-6.el7
+    web2:   centos-logos.noarch 0:70.0.6-3.el7.centos
+    web2:   httpd-tools.x86_64 0:2.4.6-89.el7.centos.1
+    web2:   mailcap.noarch 0:2.1.41-2.el7
+    web2:
+    web2: Complete!
+    web2: ● httpd.service - The Apache HTTP Server
+    web2:    Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; vendor preset: disabled)
+    web2:    Active: active (running) since Sun 2019-09-08 18:06:51 UTC; 20ms ago
+    web2:      Docs: man:httpd(8)
+    web2:            man:apachectl(8)
+    web2:  Main PID: 5103 (httpd)
+    web2:    Status: "Processing requests..."
+    web2:    CGroup: /system.slice/httpd.service
+    web2:            ├─5103 /usr/sbin/httpd -DFOREGROUND
+    web2:            ├─5104 /usr/sbin/httpd -DFOREGROUND
+    web2:            ├─5105 /usr/sbin/httpd -DFOREGROUND
+    web2:            ├─5106 /usr/sbin/httpd -DFOREGROUND
+    web2:            ├─5107 /usr/sbin/httpd -DFOREGROUND
+    web2:            └─5108 /usr/sbin/httpd -DFOREGROUND
+    web2:
+    web2: Sep 08 18:06:51 localhost.localdomain systemd[1]: Starting The Apache HTTP Server...
+    web2: Sep 08 18:06:51 localhost.localdomain httpd[5103]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using localhost.localdomain. Set the 'ServerName' directive globally to suppress this message
+    web2: Sep 08 18:06:51 localhost.localdomain systemd[1]: Started The Apache HTTP Server.
+==> lb_haproxy: Importing base box 'centos/7'...
+==> lb_haproxy: Matching MAC address for NAT networking...
+==> lb_haproxy: Checking if box 'centos/7' version '1905.1' is up to date...
+==> lb_haproxy: Setting the name of the VM: vagrant-lb-example_lb_haproxy_1567966031158_29754
+==> lb_haproxy: Fixed port collision for 22 => 2222. Now on port 2201.
+==> lb_haproxy: Clearing any previously set network interfaces...
+==> lb_haproxy: Preparing network interfaces based on configuration...
+    lb_haproxy: Adapter 1: nat
+    lb_haproxy: Adapter 2: hostonly
+==> lb_haproxy: You are trying to forward to privileged ports (ports <= 1024). Most
+==> lb_haproxy: operating systems restrict this to only privileged process (typically
+==> lb_haproxy: processes running as an administrative user). This is a warning in case
+==> lb_haproxy: the port forwarding doesn't work. If any problems occur, please try a
+==> lb_haproxy: port higher than 1024.
+==> lb_haproxy: Forwarding ports...
+    lb_haproxy: 80 (guest) => 80 (host) (adapter 1)
+    lb_haproxy: 22 (guest) => 2201 (host) (adapter 1)
+==> lb_haproxy: Booting VM...
+==> lb_haproxy: Waiting for machine to boot. This may take a few minutes...
+    lb_haproxy: SSH address: 127.0.0.1:2201
+    lb_haproxy: SSH username: vagrant
+    lb_haproxy: SSH auth method: private key
+    lb_haproxy:
+    lb_haproxy: Vagrant insecure key detected. Vagrant will automatically replace
+    lb_haproxy: this with a newly generated keypair for better security.
+    lb_haproxy:
+    lb_haproxy: Inserting generated public key within guest...
+    lb_haproxy: Removing insecure key from the guest if it's present...
+    lb_haproxy: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> lb_haproxy: Machine booted and ready!
+==> lb_haproxy: Checking for guest additions in VM...
+    lb_haproxy: No guest additions were detected on the base box for this VM! Guest
+    lb_haproxy: additions are required for forwarded ports, shared folders, host only
+    lb_haproxy: networking, and more. If SSH fails on this machine, please install
+    lb_haproxy: the guest additions and repackage the box to continue.
+    lb_haproxy:
+    lb_haproxy: This is not an error message; everything may continue to work properly,
+    lb_haproxy: in which case you may ignore this message.
+==> lb_haproxy: Configuring and enabling network interfaces...
+==> lb_haproxy: Rsyncing folder: /cygdrive/c/Users/Praveen/Desktop/GIT/vagrant-lb-example/ => /vagrant
+==> lb_haproxy: Running provisioner: shell...
+    lb_haproxy: Running: C:/Users/Praveen/AppData/Local/Temp/vagrant-shell20190908-20344-22vx48.sh
+    lb_haproxy: Loaded plugins: fastestmirror
+    lb_haproxy: Determining fastest mirrors
+    lb_haproxy:  * base: centos.excellmedia.net
+    lb_haproxy:  * extras: centos.excellmedia.net
+    lb_haproxy:  * updates: centos.excellmedia.net
+    lb_haproxy: Resolving Dependencies
+    lb_haproxy: --> Running transaction check
+    lb_haproxy: ---> Package haproxy.x86_64 0:1.5.18-8.el7 will be installed
+    lb_haproxy: ---> Package net-tools.x86_64 0:2.0-0.24.20131004git.el7 will be installed
+    lb_haproxy: --> Finished Dependency Resolution
+    lb_haproxy:
+    lb_haproxy: Dependencies Resolved
+    lb_haproxy:
+    lb_haproxy: ================================================================================
+    lb_haproxy:  Package         Arch         Version                          Repository  Size
+    lb_haproxy: ================================================================================
+    lb_haproxy: Installing:
+    lb_haproxy:  haproxy         x86_64       1.5.18-8.el7                     base       834 k
+    lb_haproxy:  net-tools       x86_64       2.0-0.24.20131004git.el7         base       306 k
+    lb_haproxy:
+    lb_haproxy: Transaction Summary
+    lb_haproxy: ================================================================================
+    lb_haproxy: Install  2 Packages
+    lb_haproxy:
+    lb_haproxy: Total download size: 1.1 M
+    lb_haproxy: Installed size: 3.5 M
+    lb_haproxy: Downloading packages:
+    lb_haproxy: Public key for haproxy-1.5.18-8.el7.x86_64.rpm is not installed
+    lb_haproxy: warning: /var/cache/yum/x86_64/7/base/packages/haproxy-1.5.18-8.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+    lb_haproxy: --------------------------------------------------------------------------------
+    lb_haproxy: Total                                              982 kB/s | 1.1 MB  00:01
+    lb_haproxy: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    lb_haproxy: Importing GPG key 0xF4A80EB5:
+    lb_haproxy:  Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>"
+    lb_haproxy:  Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+    lb_haproxy:  Package    : centos-release-7-6.1810.2.el7.centos.x86_64 (@anaconda)
+    lb_haproxy:  From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    lb_haproxy: Running transaction check
+    lb_haproxy: Running transaction test
+    lb_haproxy: Transaction test succeeded
+    lb_haproxy: Running transaction
+    lb_haproxy:   Installing : net-tools-2.0-0.24.20131004git.el7.x86_64                    1/2
+    lb_haproxy:
+    lb_haproxy:   Installing : haproxy-1.5.18-8.el7.x86_64                                  2/2
+    lb_haproxy:
+    lb_haproxy:   Verifying  : haproxy-1.5.18-8.el7.x86_64                                  1/2
+    lb_haproxy:
+    lb_haproxy:   Verifying  : net-tools-2.0-0.24.20131004git.el7.x86_64                    2/2
+    lb_haproxy:
+    lb_haproxy:
+    lb_haproxy: Installed:
+    lb_haproxy:   haproxy.x86_64 0:1.5.18-8.el7   net-tools.x86_64 0:2.0-0.24.20131004git.el7
+    lb_haproxy:
+    lb_haproxy: Complete!
+    lb_haproxy: Created symlink from /etc/systemd/system/multi-user.target.wants/haproxy.service to /usr/lib/systemd/system/haproxy.service.
+    lb_haproxy: ● haproxy.service - HAProxy Load Balancer
+    lb_haproxy:    Loaded: loaded (/usr/lib/systemd/system/haproxy.service; enabled; vendor preset: disabled)
+    lb_haproxy:    Active: active (running) since Sun 2019-09-08 18:07:59 UTC; 64ms ago
+    lb_haproxy:  Main PID: 5091 (haproxy-systemd)
+    lb_haproxy:    CGroup: /system.slice/haproxy.service
+    lb_haproxy:            ├─5091 /usr/sbin/haproxy-systemd-wrapper -f /etc/haproxy/haproxy.cfg -p /run/haproxy.pid
+    lb_haproxy:            ├─5092 /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg -p /run/haproxy.pid -Ds
+    lb_haproxy:            └─5093 /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg -p /run/haproxy.pid -Ds
+    lb_haproxy:
+    lb_haproxy: Sep 08 18:07:59 localhost.localdomain systemd[1]: Started HAProxy Load Balancer.
+    lb_haproxy: Sep 08 18:07:59 localhost.localdomain haproxy-systemd-wrapper[5091]: haproxy-systemd-wrapper: executing /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg -p /run/haproxy.pid -Ds
